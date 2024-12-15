@@ -28,16 +28,13 @@ int ITK_user_main(int argc, char* argv[]) {
 	status = AOM_set_value_string(create_input, "object_name", "BulkItem_Side Clamping");
 	status = TCTYPE_create_object(create_input, &NewFolder);	
 	status = AOM_save_with_extensions(NewFolder);
-
-	
-
+		
 	//find user Home folder	
 	status = SA_find_user2(userID, & user);
 	status = SA_ask_user_home_folder(user, &Huser_folder);
 	status = FL_insert(Huser_folder, NewFolder, 999);	
 	status = AOM_save_with_extensions(Huser_folder);	
-	
-	
+		
 
 	FILE* fp;
 	char FLine[50];
@@ -49,12 +46,7 @@ int ITK_user_main(int argc, char* argv[]) {
 	while (fgets(FLine, 50, fp)) {
 		 ItemName= strtok(FLine, ",");
 		 UOM = strtok(NULL, ", ");
-		 make_buy = strtok(NULL, " ");
-
-		 /*printf("%s ", ItemName);
-		 printf("%s ", UOM);
-		 printf("%s\N", make_buy);*/
-
+		 make_buy = strtok(NULL, " ");		 
 
 		 status = TCTYPE_find_type("A3BHMakePart", "A3BHMakePart", &type);
 		 status = TCTYPE_construct_create_input(type, &create_input);
@@ -67,7 +59,6 @@ int ITK_user_main(int argc, char* argv[]) {
 		 status = FL_insert(NewFolder, NewItem, 999);		
 		 status = AOM_save_with_extensions(NewFolder);
 		 printf("Item Created: %d\n", NewItem);
-
 	}
 
 	fclose(fp);
