@@ -24,13 +24,13 @@ int ITK_user_main(int argc, char* argv[]) {
 	}
 
 	status = TCTYPE_find_type("Folder", "Folder", &type);	
-	status = TCTYPE_construct_create_input(type, & create_input);
+	status = TCTYPE_construct_create_input(type, &create_input);
 	status = AOM_set_value_string(create_input, "object_name", "BulkItem_Side Clamping");
 	status = TCTYPE_create_object(create_input, &NewFolder);	
 	status = AOM_save_with_extensions(NewFolder);
 		
 	//find user Home folder	
-	status = SA_find_user2(userID, & user);
+	status = SA_find_user2(userID, &user);
 	status = SA_ask_user_home_folder(user, &Huser_folder);
 	status = FL_insert(Huser_folder, NewFolder, 999);	
 	status = AOM_save_with_extensions(Huser_folder);	
