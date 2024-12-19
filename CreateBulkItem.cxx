@@ -25,7 +25,7 @@ int ITK_user_main(int argc, char* argv[]) {
 
 	status = TCTYPE_find_type("Folder", "Folder", &type);	
 	status = TCTYPE_construct_create_input(type, & create_input);
-	status = AOM_set_value_string(create_input, "object_name", "BulkItem_Side Clamping");
+	status = AOM_set_value_string(create_input, "object_name", "BulkItem_Dieset Assy");
 	status = TCTYPE_create_object(create_input, &NewFolder);	
 	status = AOM_save_with_extensions(NewFolder);
 		
@@ -41,7 +41,7 @@ int ITK_user_main(int argc, char* argv[]) {
 	char* ItemName;
 	char* UOM;
 	char* make_buy;
-	fp = fopen("G:\\My Drive\\FaithPLM\\Online Batch Recorded Sessions\\3. C Language\\Bulk Item Creation BOM.csv", "a+");
+	fp = fopen("G:\\My Drive\\FaithPLM\\Online Batch Recorded Sessions\\4. Customization\\Bulk Item Creation BOM.csv", "a+");
 
 	while (fgets(FLine, 50, fp)) {
 		 ItemName= strtok(FLine, ",");
