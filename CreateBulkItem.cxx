@@ -58,7 +58,12 @@ int ITK_user_main(int argc, char* argv[]) {
 
 		 status = FL_insert(NewFolder, NewItem, 999);		
 		 status = AOM_save_with_extensions(NewFolder);
-		 printf("Item Created: %d\n", NewItem);
+
+		 char* item_id=NULL;
+		 status = ITEM_ask_id2(NewItem,&item_id);
+		 printf("Item Created: %s\n", item_id);
+
+		 MEM_free(item_id);		 
 	}
 
 	fclose(fp);
