@@ -45,8 +45,8 @@ int ITK_user_main(int argc, char* argv[]) {
 
 	while (fgets(FLine, 50, fp)) {
 		 ItemName= strtok(FLine, ",");
-		 UOM = strtok(NULL, ", ");
-		 make_buy = strtok(NULL, " ");		 
+		 UOM = strtok(NULL, ",");
+		 make_buy = strtok(NULL, ",");		 
 
 		 status = TCTYPE_find_type("A3BHMakePart", "A3BHMakePart", &type);
 		 status = TCTYPE_construct_create_input(type, &create_input);
