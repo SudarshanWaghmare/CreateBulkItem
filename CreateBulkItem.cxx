@@ -30,7 +30,7 @@ int ITK_user_main(int argc, char* argv[]) {
 	status = AOM_save_with_extensions(NewFolder);
 		
 	//find user Home folder	
-	status = SA_find_user2(userID, & user);
+	status = SA_find_user2(userID, &user);
 	status = SA_ask_user_home_folder(user, &Huser_folder);
 	status = FL_insert(Huser_folder, NewFolder, 999);	
 	status = AOM_save_with_extensions(Huser_folder);	
